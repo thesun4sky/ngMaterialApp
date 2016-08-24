@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/card.css">
+    <link rel="stylesheet" href="styles/gridList.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="smapleAppApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+           <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button> //상단 토글 버튼
+-->
+
+            <!-- 상단 검색바 -->
+
+            <div ng-controller="DemoCtrl as ctrl" layout="column" ng-style="{ 'width' : '500px' }" ng-cloak>
+              <md-content layout-padding layout="column" >
+                <form ng-submit="$event.preventDefault()">
+                  <md-autocomplete
+                    ng-disabled="ctrl.isDisabled"
+                    md-no-cache="ctrl.noCache"
+                    md-selected-item="ctrl.selectedItem"
+                    md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                    md-search-text="ctrl.searchText"
+                    md-selected-item-change="ctrl.selectedItemChange(item)"
+                    md-items="item in ctrl.querySearch(ctrl.searchText)"
+                    md-item-text="item.name"
+                    md-min-length="0"
+                    placeholder="제품명 / 브랜드를 입력해주세요."
+                    md-menu-class="autocomplete-custom-template">
+                    <md-item-template>
+          <span class="item-title">
+            <md-icon md-svg-icon="images/cos.png"></md-icon> <!--이미지 필요-->
+            <span> {{item.name}} ({{item.maker}}) </span>
+          </span>
+          <span class="item-metadata">
+            <span class="item-metastat">
+              <strong>{{item.price}}</strong> 원
+            </span>
+            <span class="item-metastat">
+              <strong>{{item.watchers}}</strong> hit
+            </span>
+          </span>
+                    </md-item-template>
+                  </md-autocomplete>
+                </form>
+              </md-content>
+            </div>
+            <!-- 상단 검색바 끝-->
+
+
+            </md-toolbar>
+            <div style="align-self: center" layout="row" layout-sm="column" layout-align="center">
+              <md-list ng-cloak>
+              <p><a ng-href="#/my"> <img src="images/1.PNG" class="header_icon"> </a> 내 화장대
+                <a ng-href="#/friend"><img src="images/2.PNG" class="header_icon"></a>이웃화장대
+                  <a ng-href="#/favorite"><img src="images/3.PNG" class="header_icon"> </a>관심리스트
+                    <a ng-href="#/event"><img src="images/4.PNG" class="header_icon"></a> 이벤트</p>
+                </md-list>
+          <!--<div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#/">Homeeee</a></li>
+              <li><a ng-href="#/about">About</a></li>
+              <li><a ng-href="#/">Contact</a></li>
+            </ul>
+          </div>  //상단토글 리스트-->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <div ng-view="">
+
+
+
+    </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span> from the CoAwesome team</p>
+      </div>
+    </div>
+
+        <footer>
+          <md-toolbar class="md-scroll-shrink" style="background-color: white;">
+            <div layout="row" layout-align="center center" flex>
+                <ul class="nav nav-justified" style="list-style-type: none;  position: fixed; bottom: 0;  width: 100%;">
+                  <li class="active"> <a ng-href="#/"><img src="images/footer01.PNG" style="width: 50px">홈</a></li>
+                  <li><a ng-href="#/"><img src="images/footer02.PNG" style="width: 50px">카테고리</a></li>
+                  <li><a ng-href="#/"><img src="images/footer03.PNG" style="width: 70px"> </a></li>
+                  <li><a ng-href="#/"><img src="images/footer04.PNG" style="width: 50px">알림</a></li>
+                  <li><a ng-href="#/"><img src="images/footer05.PNG" style="width: 50px">마이페이지</a></li>
+                </ul>
+            </div>
+          </md-toolbar>
+        </footer>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

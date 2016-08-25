@@ -30,15 +30,15 @@ angular
       })
       .when('/friend', {
         templateUrl: 'views/friend.html',
-        controller: 'FriendCtrl'
+        controller: 'FriendCtrl'  //TODO FriendCtrl작성
       })
       .when('/favorite', {
         templateUrl: 'views/favorite.html',
-        controller: 'FavoriteCtrl'
+        controller: 'FavoriteCtrl'  //TODO FavoriteCtrl작성
       })
       .when('/event', {
         templateUrl: 'views/event.html',
-        controller: 'EventCtrl'
+        controller: 'EventCtrl'  //TODO EventCtrl작성
       })
       .otherwise({
         redirectTo: '/'
@@ -53,7 +53,7 @@ angular
   .controller('gridListDemoCtrl', function($scope) {
     this.tiles = buildGridModel({
       icon : "avatar:svg-",
-      title: "item-",
+      title: "요즘같이 습한날엔 필수탬! 다음에도 꼭 사야지!!",
       background: ""
     });
     function buildGridModel(tileTmpl){

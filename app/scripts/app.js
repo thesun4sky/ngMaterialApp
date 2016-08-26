@@ -26,7 +26,7 @@ angular
       })
       .when('/my', {
         templateUrl: 'views/my.html',
-        controller: 'MainCtrl'
+        controller: 'myCtrl'
       })
       .when('/friend', {
         templateUrl: 'views/friend.html',

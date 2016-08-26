@@ -1,1 +1,76 @@
-<p>This is the my view.</p>
+<style type="text/css">
+  .add-button{
+    margin:auto;
+  }
+  .my-list-style{
+    border-top: 1px solid #eee;
+    height:53px;
+    margin:3px 0;
+  }
+  .my-list-image{
+    margin-top:3px;
+    border-radius: 25px;
+    width:50px;
+    height:50px;
+  }
+  .my-list-text{
+    text-align: center;
+    max-height: 20px;
+    overflow: visible;
+  }
+  .maker-font{
+    font-size:x-small;
+    color:dimgray;
+    padding:0 1px;
+    width:18%;
+    margin:auto;
+  }
+  .name-font{
+    font-size: x-small;
+    font-weight: 900;
+    padding:0 1px;
+    width: 33%;
+    margin:auto;
+  }
+  .review-font{
+     font-size: small;
+     font-weight: bold;
+     margin:auto;
+     padding:0 1px;
+     width: 25%;
+   }
+  .button-style{
+    width: 5%;
+    padding:0 1px;
+   }
+</style>
+<div style="text-align:center;"><img src="images/my_plus.png" style="width: 30%; height: 30%; margin-bottom: 10px">
+</div>
+<p style="text-align: center">파우치에 화장품을 등록해 보세요</p>
+
+<div class="container" style="margin-bottom: 50px; padding :0">
+  <div class="row">
+    <div class="">
+      <div class="">
+        <ul class="list-group">
+          <li href="#" ng-repeat="repo in repos" class="my-list-style">
+            <img class="pull-left my-list-image"  src="images/{{repo.image}}">
+              <div>
+                <div class="pull-left maker-font">{{repo.maker}}
+                </div>
+                <div class="pull-left name-font my-list-text">
+                  {{repo.name}}
+                </div>
+                <div class="pull-left review-font my-list-text">
+                  {{repo.review}}
+                </div>
+                <label class="pull-left button-style">
+                  >
+                </label>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

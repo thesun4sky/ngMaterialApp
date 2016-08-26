@@ -28,6 +28,10 @@ angular
         templateUrl: 'views/my.html',
         controller: 'myCtrl'
       })
+      .when('/my-add', {
+        templateUrl: 'views/my-add.html',
+        controller: 'myCtrl'
+      })
       .when('/friend', {
         templateUrl: 'views/friend.html',
         controller: 'FriendCtrl'  //TODO FriendCtrl작성
